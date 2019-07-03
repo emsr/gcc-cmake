@@ -1,8 +1,11 @@
 sudo docker login rsggitlab.alionscience.com/esmith-rowland
 
 # This can be referenced from UPM scripts.
-sudo docker build --rm -t "rsggitlab.alionscience.com/esmith-rowland/gccN-cmake" gcc-N
-sudo docker build --rm --no-cache -t "rsggitlab.alionscience.com/esmith-rowland/gccN-cmake" gcc-N
+sudo docker build --rm -t rsggitlab.alionscience.com/esmith-rowland/gccN-cmake gcc-N
+sudo docker build --rm --no-cache -t rsggitlab.alionscience.com/esmith-rowland/gccN-cmake gcc-N
+
+sudo docker build --rm -t rsggitlab.alionscience.com/esmith-rowland/gcc9-cmake gcc-9
+sudo docker build --rm -t rsggitlab.alionscience.com/esmith-rowland/gcc8-cmake gcc-8
 
 # It's possible I could have a totally local thing.
 sudo docker build --rm -t gccN-cmake gcc-N
@@ -20,3 +23,7 @@ sudo docker run -it gccN-cmake
 
 # Kill all the things...
 sudo docker system prune
+
+# Push these
+sudo docker push rsggitlab.alionscience.com/esmith-rowland/gcc9-cmake
+sudo docker push rsggitlab.alionscience.com/esmith-rowland/gcc8-cmake
